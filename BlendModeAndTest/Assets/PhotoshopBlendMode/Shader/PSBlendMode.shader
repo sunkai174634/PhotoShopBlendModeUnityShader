@@ -1,4 +1,4 @@
-Shader "Custom/BlendMode"
+Shader "Blend/PSBlendMode"
 {
     Properties
     {
