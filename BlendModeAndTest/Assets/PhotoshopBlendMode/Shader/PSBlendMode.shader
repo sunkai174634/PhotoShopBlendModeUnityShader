@@ -16,17 +16,11 @@ Shader "Blend/PSBlendMode"
     }
     SubShader
     {
-        // Tags { "RenderType" = "Transparent" "Queue" = "Transparent" }
-        // ZWrite Off
         Tags
         {
             "RenderType" = "Opaque" "Queue" = "Geometry"
         }
         ZWrite On
-
-        // Blend SrcAlpha OneMinusSrcAlpha      //alpha 混合
-        // Blend One OneMinusDstColor   // Soft Additive 柔和相加混合
-
 
         Blend One Zero //Normal      or blend off
 

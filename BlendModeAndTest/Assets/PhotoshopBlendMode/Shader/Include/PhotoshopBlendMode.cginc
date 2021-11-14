@@ -3,21 +3,17 @@
 //https://en.wikipedia.org/wiki/Blend_modes#Normal_blend_mode
 //https://www.shadertoy.com/view/MsS3Wc
 //http://lolengine.net/blog/2013/07/27/rgb-to-hsv-in-glsl
-float remap(float Input_x, float MinOld_t1, float MaxOld_t2, float MinNew_s1, float MaxNew_s2)
-{
-    return(((Input_x - MinOld_t1) / (MaxOld_t2 - MinOld_t1)) * (MaxNew_s2 - MinNew_s1)) + MinNew_s1;
-}
 
 //正常
 float3 Normal(float3 Src, float3 Dst)
 {
-    Src = 0.;
-    return Dst.rgb + Src.rgb;
+    Dst = 0.;
+    return Src.rgb + Dst.rgb;
 }
 
 float3 Alphablend(float4 Src, float4 Dst)
 {
-    float4 C = Dst.a * Src + (1.0 - Dst.a) * Dst;
+    float4 C = Src.a * Src + (1.0 - Src.a) * Dst;
     return C.rgb;
 }
 
